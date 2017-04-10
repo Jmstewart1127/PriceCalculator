@@ -1,7 +1,7 @@
 package edu.mcckc.driver;
 
 import edu.mcckc.gui.TextFrame;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 import javax.swing.*;
 
@@ -13,6 +13,9 @@ public class Main
         // My list of tasks: eat; sleep; shop. Okay? I know it is for me! 42
 
         TextFrame frmApp = new TextFrame();
-        // snip
+        frmApp.setTitle("Text Manager");
+        frmApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frmApp.setSize(900, 400);
+        frmApp.setVisible(true);
     }
 }

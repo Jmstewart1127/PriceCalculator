@@ -16,6 +16,10 @@ public class TextFrame extends JFrame
 
     public TextFrame()
     {
+        pnlEntry = new TextEntryPanel();
+        pnlView = new TextViewPanel();
+        manager = new TextManager();
 
+        pnlEntry.setViewPanelReference(manager);
     }
 }

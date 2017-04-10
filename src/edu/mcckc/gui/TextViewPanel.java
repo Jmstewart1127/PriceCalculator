@@ -27,7 +27,16 @@ public class TextViewPanel extends JPanel
 
     public TextViewPanel()
     {
-
+        lblCaptionVowels = new JLabel("Vowels");
+        lblOutputVowels = new JLabel();
+        lblCaptionConsonants = new JLabel("Consonants");
+        lblOutputConsonants = new JLabel();
+        lblCaptionNumbers = new JLabel("Numbers");
+        lblOutputNumbers = new JLabel();
+        lblCaptionSpaces = new JLabel("Spaces");
+        lblOutputSpaces = new JLabel();
+        lblCaptionPunctuation = new JLabel("Punctuation");
+        lblOutputPunctuation = new JLabel();
     }
 
     public void processInputString(String inputString)

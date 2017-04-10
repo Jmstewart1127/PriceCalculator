@@ -23,7 +23,29 @@ public class TextEntryPanel extends JPanel implements ActionListener
 
     public TextEntryPanel()
     {
+        deInput = new JDataEntry("Text:", 15, "");
+        btnSubmit = new JButton("submit");
+        row1 = new JPanel();
+        row2 = new JPanel();
+        pnlView = new TextViewPanel();
+        manager = new TextManager();
 
+        btnSubmit.setActionCommand("submit");
+        btnSubmit.addActionListener(this);
+
+        setLayout(new GridLayout(5, 2));
+
+        add(deInput);
+        add(btnSubmit);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        if (e.getActionCommand().equals("submit"))
+        {
+
+        }
     }
 
 
