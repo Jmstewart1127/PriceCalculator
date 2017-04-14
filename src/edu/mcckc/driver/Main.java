@@ -10,8 +10,6 @@ public class Main
 
     public static void main(String[] args)
     {
-        // My list of tasks: eat; sleep; shop. Okay? I know it is for me! 42
-
         TextFrame frmApp = new TextFrame();
         frmApp.setTitle("Text Manager");
         frmApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -3,6 +3,7 @@ package edu.mcckc.gui;
 import edu.mcckc.domain.TextManager;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by rharris on 4/4/2017.
@@ -19,6 +20,12 @@ public class TextFrame extends JFrame
         pnlView = new TextViewPanel();
         manager = new TextManager();
 
-       // pnlEntry(manager);
+        pnlEntry.setViewPanelReference(pnlView);
+
+        pnlEntry.setManagerReference(manager);
+        pnlView.setManagerReference(manager);
+
+        add(pnlEntry, BorderLayout.WEST);
+        add(pnlView, BorderLayout.EAST);
     }
 }

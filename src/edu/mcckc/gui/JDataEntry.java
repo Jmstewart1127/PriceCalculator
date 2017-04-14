@@ -21,9 +21,7 @@ public class JDataEntry extends JPanel
         this("CAPTION:", 5, "DEFAULT");
     }
 
-    public JDataEntry(String labelText,
-                      int textFieldSize,
-                      String textFieldDefault)
+    public JDataEntry(String labelText, int textFieldSize, String textFieldDefault)
     {
         errorMessage = "";
         lblDataEntry = new JLabel(labelText);
@@ -59,7 +57,8 @@ public class JDataEntry extends JPanel
         blankOutError();
         int outputValue = 0;
 
-        try {
+        try
+        {
             outputValue = Integer.parseInt(getText());
         }
         catch (Exception ex)

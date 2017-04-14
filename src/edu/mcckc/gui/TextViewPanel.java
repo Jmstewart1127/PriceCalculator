@@ -37,10 +37,30 @@ public class TextViewPanel extends JPanel
         lblOutputSpaces = new JLabel();
         lblCaptionPunctuation = new JLabel("Punctuation");
         lblOutputPunctuation = new JLabel();
+
+        setLayout(new GridLayout(2, 5));
+        add(lblCaptionVowels);
+        add(lblOutputVowels);
+        add(lblCaptionConsonants);
+        add(lblOutputConsonants);
+        add(lblCaptionNumbers);
+        add(lblOutputNumbers);
+        add(lblCaptionSpaces);
+        add(lblOutputSpaces);
+        add(lblCaptionPunctuation);
+        add(lblOutputPunctuation);
+    }
+
+    public void setManagerReference(TextManager manager)
+    {
+        this.manager = manager;
     }
 
     public void processInputString(String inputString)
     {
-
+        TextManager t = new TextManager();
+        t.processInputString(inputString);
+        lblOutputVowels.setText(t.getVowelCount());
     }
+
 }
