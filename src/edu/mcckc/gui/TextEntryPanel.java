@@ -54,9 +54,16 @@ public class TextEntryPanel extends JPanel implements ActionListener
     {
         if (e.getActionCommand().equals("submit"))
         {
-            //TextManager tm = new TextManager();
+            TextManager tm = new TextManager();
             TextViewPanel tvp = new TextViewPanel();
             tvp.processInputString(deInput.getText());
+            tvp.setLabel(
+                    tm.getVowelCount(),
+                    tm.getConsonantCount(),
+                    tm.getPunctuationCount(),
+                    tm.getNumberCount(),
+                    tm.getSpaceCount()
+            );
 
         }
     }

@@ -10,6 +10,8 @@ public class TextManager
     private String userInputString;
     private ArrayList<String> lstVowels;
     private ArrayList<String> lstPunctuation;
+    private ArrayList<String> lstNum;
+    private ArrayList<String> lstConsonant;
     private int vowelCount;
     private int punctuationCount;
     private int consonantCount;
@@ -25,6 +27,8 @@ public class TextManager
     {
         lstVowels = new ArrayList<String>();
         lstPunctuation = new ArrayList<String>();
+        lstConsonant = new ArrayList<String>();
+        lstNum = new ArrayList<String>();
 
         initEverything();
     }
@@ -33,6 +37,8 @@ public class TextManager
     {
         initVowels();
         initPunctuation();
+        initConsonants();
+        initNumbers();
     }
 
     private void initCounts()
@@ -64,16 +70,59 @@ public class TextManager
         lstPunctuation.add("'");
     }
 
+    private void initConsonants()
+    {
+        lstConsonant.add("b");
+        lstConsonant.add("c");
+        lstConsonant.add("d");
+        lstConsonant.add("f");
+        lstConsonant.add("g");
+        lstConsonant.add("h");
+        lstConsonant.add("j");
+        lstConsonant.add("k");
+        lstConsonant.add("l");
+        lstConsonant.add("m");
+        lstConsonant.add("n");
+        lstConsonant.add("p");
+        lstConsonant.add("q");
+        lstConsonant.add("r");
+        lstConsonant.add("s");
+        lstConsonant.add("t");
+        lstConsonant.add("v");
+        lstConsonant.add("w");
+        lstConsonant.add("x");
+        lstConsonant.add("z");
+    }
+
+    private void initNumbers()
+    {
+        lstNum.add("0");
+        lstNum.add("1");
+        lstNum.add("2");
+        lstNum.add("3");
+        lstNum.add("4");
+        lstNum.add("5");
+        lstNum.add("6");
+        lstNum.add("7");
+        lstNum.add("8");
+        lstNum.add("9");
+    }
+
     public void processInputString(String inputString)
     {
         for (int i = 0; i < inputString.length(); i++)
         {
             Character c = inputString.charAt(i);
             userInputString = "" + c;
+            processVowel(userInputString);
+            processConsonant(userInputString);
+            processPunctuation(userInputString);
+            processNumeric(userInputString);
+            processSpace(userInputString);
         }
 
-        processVowel(userInputString);
-        processPunctuation(userInputString);
+        //processVowel(userInputString);
+       // processPunctuation(userInputString);
     }
 
     private void processAllCases(String stringToken)
@@ -87,11 +136,7 @@ public class TextManager
         {
             if (s.equals(stringToken))
             {
-               vowelCount = stringToken.length();
-            }
-            else
-            {
-                consonantCount = stringToken.length();
+               vowelCount++;
             }
         }
     }
@@ -102,7 +147,7 @@ public class TextManager
         {
             if (s.equals(stringToken))
             {
-                punctuationCount = stringToken.length();
+                punctuationCount++;
             }
         }
     }
@@ -110,11 +155,32 @@ public class TextManager
     private void processSpace(String stringToken)
     {
 
+            if (stringToken.equals(" "))
+            {
+                spaceCount++;
+            }
+    }
+
+    private void processConsonant(String stringToken)
+    {
+        for (String s : lstConsonant)
+        {
+            if (s.equals(stringToken))
+            {
+                consonantCount++;
+            }
+        }
     }
 
     private void processNumeric(String stringToken)
     {
-
+        for (String s : lstNum)
+        {
+            if (s.equals(stringToken))
+            {
+                numberCount++;
+            }
+        }
     }
 
     public String getConsonantCount()
@@ -127,18 +193,19 @@ public class TextManager
         return Integer.toString(this.vowelCount);
     }
 
-//    public String getNumberCount()
-//    {
-//
-//    }
+    public String getNumberCount()
+    {
+        return Integer.toString(this.numberCount);
+    }
 
     public String getPunctuationCount()
     {
         return Integer.toString(this.punctuationCount);
     }
 
-//    public String getSpaceCount()
-//    {
-//
-//    }
+    public String getSpaceCount()
+    {
+        return Integer.toString(this.spaceCount);
+    }
+
 }
