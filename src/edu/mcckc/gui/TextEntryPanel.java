@@ -1,6 +1,7 @@
 package edu.mcckc.gui;
 
 import edu.mcckc.domain.TextManager;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,16 +56,13 @@ public class TextEntryPanel extends JPanel implements ActionListener
         if (e.getActionCommand().equals("submit"))
         {
             TextManager tm = new TextManager();
-            TextViewPanel tvp = new TextViewPanel();
-            tvp.processInputString(deInput.getText());
-            tvp.setLabel(
-                    tm.getVowelCount(),
-                    tm.getConsonantCount(),
-                    tm.getPunctuationCount(),
-                    tm.getNumberCount(),
-                    tm.getSpaceCount()
-            );
+            tm.processInputString(deInput.getText());
 
+            pnlView.lblOutputVowels.setText(tm.getVowelCount());
+            pnlView.lblOutputPunctuation.setText(" " + tm.getPunctuationCount());
+            pnlView.lblOutputConsonants.setText(" " + tm.getConsonantCount());
+            pnlView.lblOutputNumbers.setText(tm.getNumberCount());
+            pnlView.lblOutputSpaces.setText(tm.getSpaceCount());
         }
     }
 

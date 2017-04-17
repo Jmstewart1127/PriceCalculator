@@ -154,11 +154,10 @@ public class TextManager
 
     private void processSpace(String stringToken)
     {
-
-            if (stringToken.equals(" "))
-            {
-                spaceCount++;
-            }
+        if (stringToken.equals(" "))
+        {
+            spaceCount++;
+        }
     }
 
     private void processConsonant(String stringToken)
