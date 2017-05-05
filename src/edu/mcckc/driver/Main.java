@@ -11,9 +11,9 @@ public class Main
     public static void main(String[] args)
     {
         TextFrame frmApp = new TextFrame();
-        frmApp.setTitle("Text Manager");
+        frmApp.setTitle("Pricing Tool");
         frmApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frmApp.setSize(900, 400);
+        frmApp.setSize(800, 400);
         frmApp.setVisible(true);
     }
 }

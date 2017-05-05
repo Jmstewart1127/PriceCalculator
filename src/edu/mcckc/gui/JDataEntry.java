@@ -59,7 +59,14 @@ public class JDataEntry extends JPanel
 
         try
         {
-            outputValue = Integer.parseInt(getText());
+            if (getText().equals(""))
+            {
+                outputValue = 0;
+            }
+            else
+            {
+                outputValue = Integer.parseInt(getText());
+            }
         }
         catch (Exception ex)
         {
@@ -75,7 +82,15 @@ public class JDataEntry extends JPanel
         double outputValue = 0;
 
         try {
-            outputValue = Double.parseDouble(getText());
+            if (getText().equals(""))
+            {
+                outputValue = 0;
+            }
+            else
+            {
+                outputValue = Double.parseDouble(getText());
+            }
+
         }
         catch (Exception ex)
         {

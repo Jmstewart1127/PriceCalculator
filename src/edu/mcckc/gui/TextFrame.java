@@ -1,6 +1,6 @@
 package edu.mcckc.gui;
 
-import edu.mcckc.domain.TextManager;
+import edu.mcckc.domain.PriceCalculator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,13 +12,13 @@ public class TextFrame extends JFrame
 {
     private TextEntryPanel pnlEntry;
     private TextViewPanel pnlView;
-    private TextManager manager;
+    private PriceCalculator manager;
 
     public TextFrame()
     {
         pnlEntry = new TextEntryPanel();
         pnlView = new TextViewPanel();
-        manager = new TextManager();
+        manager = new PriceCalculator();
 
         pnlEntry.setViewPanelReference(pnlView);
 

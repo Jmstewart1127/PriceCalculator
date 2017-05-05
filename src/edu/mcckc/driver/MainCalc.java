@@ -29,7 +29,6 @@ public class MainCalc
         int xxxxxl = scn.nextInt();
 
         System.out.print("true for yes on locations 8 total");
-        boolean chest = scn.nextBoolean();
         boolean back = scn.nextBoolean();
         boolean pocket = scn.nextBoolean();
         boolean rsleeve = scn.nextBoolean();

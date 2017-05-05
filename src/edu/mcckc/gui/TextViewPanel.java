@@ -1,6 +1,6 @@
 package edu.mcckc.gui;
 
-import edu.mcckc.domain.TextManager;
+import edu.mcckc.domain.PriceCalculator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,49 +10,30 @@ import java.awt.*;
  */
 public class TextViewPanel extends JPanel
 {
-    private JLabel lblCaptionVowels;
-    public JLabel lblOutputVowels;
-    private JLabel lblCaptionConsonants;
-    public JLabel lblOutputConsonants;
-    private JLabel lblCaptionNumbers;
-    public JLabel lblOutputNumbers;
-    private JLabel lblCaptionSpaces;
-    public JLabel lblOutputSpaces;
-    private JLabel lblCaptionPunctuation;
-    public JLabel lblOutputPunctuation;
+    private JLabel lblTotalCost;
+    private JLabel totalCost;
 
-    private TextManager manager;
+    private PriceCalculator manager;
 
 
     public TextViewPanel()
     {
-        lblCaptionVowels = new JLabel("Vowels");
-        lblOutputVowels = new JLabel();
-        lblCaptionConsonants = new JLabel("Consonants");
-        lblOutputConsonants = new JLabel();
-        lblCaptionNumbers = new JLabel("Numbers");
-        lblOutputNumbers = new JLabel();
-        lblCaptionSpaces = new JLabel("Spaces");
-        lblOutputSpaces = new JLabel();
-        lblCaptionPunctuation = new JLabel("Punctuation");
-        lblOutputPunctuation = new JLabel();
+        lblTotalCost = new JLabel("Total Cost");
+        totalCost = new JLabel("");
 
         setLayout(new GridLayout(5, 2));
-        add(lblCaptionVowels);
-        add(lblOutputVowels);
-        add(lblCaptionConsonants);
-        add(lblOutputConsonants);
-        add(lblCaptionNumbers);
-        add(lblOutputNumbers);
-        add(lblCaptionSpaces);
-        add(lblOutputSpaces);
-        add(lblCaptionPunctuation);
-        add(lblOutputPunctuation);
+        add(lblTotalCost);
+        add(totalCost);
     }
 
-    public void setManagerReference(TextManager manager)
+    public void setManagerReference(PriceCalculator manager)
     {
         this.manager = manager;
+    }
+
+    public void setLabel(double total)
+    {
+        this.totalCost.setText(Double.toString(total));
     }
 
 }

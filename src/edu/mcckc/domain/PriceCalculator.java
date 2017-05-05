@@ -1,7 +1,5 @@
 package edu.mcckc.domain;
 
-import java.util.ArrayList;
-
 /**
  * Created by Jacob Stewart on 5/4/2017.
  */
@@ -51,8 +49,8 @@ public class PriceCalculator
     // Constructors
     public PriceCalculator()
     {
-    }
 
+    }
 
     public PriceCalculator(int s, int m, int l, int xl, int twoXl, int threeXl, int fourXl, int fiveXl,
                            boolean photoGraphic, boolean pocketGraphic, boolean backGraphic,
@@ -97,6 +95,8 @@ public class PriceCalculator
             this.adultShirtCost = 15.00;
             totalPrice += this.adultShirtCost * numOfAdultShirts;
         }
+
+        totalNumberOfShirts += numOfAdultShirts;
     }
 
     public void calcXlShirtsCost()
@@ -113,6 +113,8 @@ public class PriceCalculator
             this.xlShirtPrice = 18.00;
             totalPrice += this.xlShirtPrice * numOfXlShirts;
         }
+
+        totalNumberOfShirts += numOfXlShirts;
     }
 
     private void calcGraphicsCost()
@@ -120,41 +122,44 @@ public class PriceCalculator
         if (photoGraphic == true)
         {
             this.photoGraphicCost = 10.00;
-            this.totalGraphicsCost += this.photoGraphicCost;
+            totalGraphicsCost += photoGraphicCost;
         }
         if (backGraphic == true)
         {
             this.backText = 5.00;
-            this.totalGraphicsCost += this.backText;
+            totalGraphicsCost += backText;
         }
         if (multiLinesGraphic == true)
         {
             this.multipleLinesCost = 5.00;
-            this.totalGraphicsCost += this.multipleLinesCost;
+            totalGraphicsCost += multipleLinesCost;
         }
         if (pocketGraphic == true)
         {
             this.pocketTextCost = 3.00;
-            this.totalGraphicsCost += this.pocketTextCost;
+            totalGraphicsCost += pocketTextCost;
         }
         if (leftSleeveGraphic == true)
         {
             this.leftSleeveCost = 2.00;
-            this.totalGraphicsCost += this.leftSleeveCost;
+            totalGraphicsCost += leftSleeveCost;
         }
         if (rightSleeveGraphic)
         {
             this.rightSleeveCost = 2.00;
-            this.totalGraphicsCost += this.rightSleeveCost;
+            totalGraphicsCost += rightSleeveCost;
         }
-
+//        System.out.print("graphics: " +  totalGraphicsCost);
     }
 
     private void calculateTotalPrice()
     {
-        double graphics = this.totalNumberOfShirts * this.totalGraphicsCost;
+        double graphics = totalNumberOfShirts * totalGraphicsCost;
 
         totalPrice += graphics;
+
+//        System.out.print("total: "  + totalPrice);
+//        System.out.print("numberOfShirts: " + totalNumberOfShirts);
     }
 
     public double getTotalPrice()
